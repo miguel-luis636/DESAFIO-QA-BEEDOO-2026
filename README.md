@@ -16,6 +16,15 @@ A partir da exploração inicial da aplicação, é possível entender que o foc
 
 Embora seja uma aplicação simples, esse tipo de funcionalidade é bastante comum em sistemas reais, como plataformas educacionais, sistemas de gestão de treinamentos ou sistemas administrativos.
 
+Além disso, foi elaborado um **Plano de Testes** contendo a estratégia de testes adotada, abordagem utilizada, escopo, técnicas consideradas e organização da execução dos testes realizados neste desafio.
+
+O plano de testes completo pode ser acessado no seguinte link:
+
+Plano de Testes – Sistema de Cadastro de Cursos (Beedoo):
+[https://github.com/miguel-luis636/DESAFIO-QA-BEEDOO-2026/blob/main/Plano%20de%20Testes%20%E2%80%93%20Sistema%20de%20Cadastro%20de%20Cursos%20(Beedoo).md](https://github.com/miguel-luis636/DESAFIO-QA-BEEDOO-2026/blob/main/Plano%20de%20Testes%20%E2%80%93%20Sistema%20de%20Cadastro%20de%20Cursos%20%28Beedoo%29.md)
+
+Esse documento complementa a análise apresentada neste README e descreve de forma mais detalhada a estratégia utilizada para condução das atividades de teste.
+
 ---
 
 # 2. Principais fluxos da aplicação
@@ -123,6 +132,39 @@ Alguns exemplos incluem:
 
 Esse tipo de teste ajuda a identificar possíveis falhas de validação ou problemas de segurança.
 
+### 3.5 Usabilidade e experiência do usuário
+
+Além das validações funcionais, também é importante avaliar a **usabilidade da aplicação**, mesmo sendo um sistema simples.
+
+Um sistema de cadastro deve permitir que o usuário compreenda facilmente como utilizar suas funcionalidades, reduzindo dúvidas ou dificuldades durante a interação.
+
+Durante os testes, é importante observar aspectos como:
+
+* Clareza das informações exibidas na interface.
+* Facilidade de navegação entre as páginas do sistema.
+* Compreensão dos campos do formulário.
+* Facilidade para identificar ações como cadastro e visualização de cursos.
+
+Problemas de usabilidade podem impactar diretamente a experiência do usuário, mesmo quando a funcionalidade técnica está funcionando corretamente.
+
+---
+
+### 3.6 Qualidade visual e consistência de design
+
+Outro ponto relevante para avaliação é a **qualidade visual da interface e consistência do design**.
+
+Mesmo em aplicações simples, é importante que o sistema apresente uma interface organizada, clara e visualmente agradável, pois isso contribui para a percepção de qualidade do produto.
+
+Durante a análise foram considerados aspectos como:
+
+* Organização dos elementos na tela.
+* Alinhamento de componentes.
+* Legibilidade dos textos.
+* Consistência visual entre páginas.
+* Clareza dos botões e ações disponíveis.
+
+Interfaces bem organizadas e visualmente consistentes ajudam a tornar o sistema **mais intuitivo e fácil de utilizar**, contribuindo para uma melhor experiência do usuário e maior qualidade do produto final.
+
 ---
 
 # 4. Decisões tomadas para criação dos testes
@@ -131,7 +173,27 @@ A definição dos cenários e casos de teste foi baseada na análise das funcion
 
 Inicialmente foi realizada uma **exploração funcional da aplicação**, com o objetivo de entender como o sistema se comporta e quais são seus fluxos principais.
 
+Durante essa etapa também foi realizada uma **avaliação dos fluxos de risco do sistema**, considerando quais funcionalidades poderiam gerar maior impacto caso apresentassem falhas. Essa análise ajudou a priorizar os testes nas áreas mais críticas da aplicação, como o fluxo de cadastro e a exibição correta das informações na listagem de cursos.
+
 Após essa análise, os testes foram organizados considerando diferentes tipos de cenários.
+
+---
+
+## Análise de riscos dos fluxos da aplicação
+
+Durante a análise foi realizada uma avaliação simples de riscos com o objetivo de identificar quais partes do sistema poderiam causar maior impacto em caso de falha.
+
+| Fluxo / Funcionalidade                     | Gravidade | Probabilidade | Impacto                                              | Mitigação                                          |
+| ------------------------------------------ | --------- | ------------- | ---------------------------------------------------- | -------------------------------------------------- |
+| Cadastro de cursos não salvar corretamente | Alta      | Média         | Usuário não consegue registrar cursos no sistema     | Testes funcionais completos do fluxo de cadastro   |
+| Cursos não aparecerem na listagem          | Alta      | Média         | Dados cadastrados não podem ser visualizados         | Testar integração entre cadastro e listagem        |
+| Falha na validação de campos obrigatórios  | Média     | Alta          | Dados inconsistentes podem ser cadastrados           | Testes de validação de campos e cenários negativos |
+| Aceitação de dados inesperados             | Média     | Média         | Pode gerar inconsistências ou falhas no sistema      | Testes exploratórios e entradas inválidas          |
+| Problemas de usabilidade no formulário     | Baixa     | Média         | Usuário pode ter dificuldade para utilizar o sistema | Avaliação de interface e experiência de uso        |
+
+Essa análise de risco foi utilizada para **priorizar os testes nos fluxos mais críticos**, garantindo maior cobertura nas funcionalidades principais da aplicação.
+
+---
 
 ### Testes do fluxo principal
 
@@ -179,26 +241,39 @@ Esses testes ajudam a identificar falhas que não são facilmente detectadas em 
 
 ---
 
-# 5. Explicação do raciocínio durante a análise
+# 5. Estratégia de testes
 
-O processo de análise começou com uma **exploração livre da aplicação**, com o objetivo de compreender como o sistema funciona e quais são suas funcionalidades principais.
+A abordagem de testes utilizada neste desafio foi baseada em uma combinação de diferentes técnicas de análise e validação do sistema.
 
-Durante essa fase inicial foram observados os seguintes aspectos:
+Inicialmente foi realizada uma fase de **testes exploratórios**, com o objetivo de compreender o comportamento da aplicação, identificar seus fluxos principais e entender como o sistema responde às interações do usuário.
 
-* Estrutura das páginas da aplicação
-* Campos disponíveis no formulário de cadastro
-* Comportamento da listagem de cursos
-* Interações possíveis do usuário com o sistema
+A partir dessa exploração inicial, foram aplicadas as seguintes abordagens de teste:
 
-A partir dessa exploração foi possível identificar os principais fluxos da aplicação, que envolvem o cadastro e a visualização de cursos.
+- **Testes exploratórios** para entender o comportamento geral da aplicação e identificar possíveis comportamentos inesperados.
+- **Testes funcionais** para validar os fluxos principais do sistema, principalmente o processo de cadastro e visualização de cursos.
+- **Testes negativos** para verificar como o sistema reage a entradas inválidas ou cenários de erro.
+- **Testes baseados em risco**, priorizando os fluxos considerados mais críticos para o funcionamento da aplicação.
 
-Com base nesses fluxos, foram definidos cenários de teste que contemplam:
+Essa abordagem permitiu avaliar tanto o funcionamento esperado do sistema quanto identificar possíveis falhas de validação, inconsistências de comportamento ou problemas na experiência do usuário.
 
-* funcionamento esperado do sistema (cenários positivos)
-* possíveis erros de uso do usuário (cenários negativos)
-* validações de campos e entradas de dados
-* comportamento da aplicação após o cadastro de cursos
+---
 
+# 6. Limitações da análise
+
+Durante a execução deste desafio, alguns tipos de testes não foram aprofundados devido ao escopo e ao tempo disponível para a atividade.
+
+Entre os tipos de testes que poderiam ser explorados em uma etapa posterior estão:
+
+- **Testes de performance**, para avaliar como a aplicação se comporta sob maior volume de uso.
+- **Testes de segurança**, para verificar possíveis vulnerabilidades relacionadas a entradas de dados ou manipulação de informações.
+- **Testes automatizados**, que poderiam ser implementados para validar automaticamente os fluxos principais da aplicação.
+- Técnicas formais de design de teste como **Partição de Equivalência** e **Análise de Valor Limite**, que poderiam ampliar a cobertura e profundidade dos cenários de teste.
+
+Essas técnicas poderiam ser aplicadas em fases futuras do projeto com o objetivo de aumentar a robustez da estratégia de testes e garantir uma cobertura ainda mais completa das funcionalidades do sistema.
+
+---
+
+# 7. Explicação do raciocínio durante a análise
 O raciocínio adotado durante a análise buscou priorizar testes que validassem a **confiabilidade do fluxo principal da aplicação**, bem como identificar possíveis falhas de validação, inconsistências na listagem de cursos ou comportamentos inesperados do sistema.
 
 Essa abordagem permite garantir uma cobertura adequada das funcionalidades disponíveis e identificar possíveis problemas que possam impactar a experiência do usuário ou a qualidade dos dados registrados no sistema.
