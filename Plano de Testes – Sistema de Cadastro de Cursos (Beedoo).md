@@ -130,6 +130,7 @@ Os testes foram executados nos seguintes navegadores, utilizando as versões mai
 - **Google Chrome** – Versão estável mais recente
 - **Mozilla Firefox** – Versão estável mais recente
 - **Microsoft Edge** – Versão estável mais recente
+- **Windows 11** – Versão estável mais recente
 
 A execução em múltiplos navegadores foi realizada para verificar possíveis diferenças de comportamento da aplicação e garantir compatibilidade básica entre navegadores modernos.
 
