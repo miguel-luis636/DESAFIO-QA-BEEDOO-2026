@@ -123,19 +123,23 @@ Esse tipo de teste permite encontrar falhas que não foram inicialmente prevista
 
 Durante a execução dos testes foram utilizadas as seguintes ferramentas:
 
-* Navegadores Web:
+### Navegadores Web
 
-  * Google Chrome
-  * Mozilla Firefox
-  * Microsoft Edge
+Os testes foram executados nos seguintes navegadores, utilizando as versões mais recentes disponíveis no momento da execução:
 
-* Ferramentas de apoio:
+- **Google Chrome** – Versão estável mais recente
+- **Mozilla Firefox** – Versão estável mais recente
+- **Microsoft Edge** – Versão estável mais recente
 
-  * DevTools do navegador (análise de console, network e elementos)
-  * Google Sheets (documentação dos casos de teste)
-  * Google Drive (armazenamento de evidências)
-  * GitHub (armazenamento do repositório e documentação)
-  * Ferramenta de captura de tela para registro de evidências
+A execução em múltiplos navegadores foi realizada para verificar possíveis diferenças de comportamento da aplicação e garantir compatibilidade básica entre navegadores modernos.
+
+### Ferramentas de apoio
+
+- DevTools do navegador (análise de console, network e elementos)
+- Google Sheets (documentação dos casos de teste)
+- Google Drive (armazenamento de evidências)
+- GitHub (armazenamento do repositório e documentação)
+- Ferramenta de captura de tela para registro de evidências
 
 ---
 
