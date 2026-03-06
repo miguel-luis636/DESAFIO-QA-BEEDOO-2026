@@ -250,6 +250,30 @@ Falhas nesses pontos podem comprometer diretamente a funcionalidade principal da
 
 ---
 
+# 📄 11. Documentação dos Testes
+
+Toda a documentação relacionada aos testes executados neste desafio foi registrada em uma planilha estruturada no Google Sheets.
+
+A planilha contém:
+
+- Cenários de teste
+- Casos de teste detalhados
+- Resultados da execução dos testes (OK / NOK)
+- Registro de evidências
+
+📊 **Planilha de Cenários e Casos de Teste**
+
+https://docs.google.com/spreadsheets/d/1TFpueHLFpJUTn0uwFgSRu9yisRpiB1wKSalo2ph5cRc/edit?usp=sharing
+
+Além da planilha, parte das informações também está documentada diretamente no repositório do GitHub:
+
+- **Resultados gerais da execução dos testes** estão descritos no README do projeto.
+- **Bugs identificados durante a execução dos testes** também foram registrados no README, contendo descrição do problema, passos para reprodução, resultado esperado e impacto identificado.
+
+Essa organização foi adotada para manter a rastreabilidade das informações e facilitar a análise do desafio durante o processo de avaliação.
+
+---
+
 # 🎯 Nota Final
 
 Este plano de testes foi elaborado com o objetivo de estruturar a abordagem de qualidade aplicada ao módulo de cursos da aplicação analisada.
