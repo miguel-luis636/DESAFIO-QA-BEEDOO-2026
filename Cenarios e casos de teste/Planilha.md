@@ -10,6 +10,20 @@ O objetivo é demonstrar a modelagem de testes funcionais considerando:
 - Validações de campos
 - Comportamentos inesperados
 
+- ## 🖥️ Ambiente de Testes
+
+Os testes foram executados em ambiente web utilizando navegadores modernos em suas versões mais recentes disponíveis na data de execução.
+
+**Navegadores utilizados:**
+
+- Google Chrome (versão estável mais recente)
+- Mozilla Firefox (versão estável mais recente)
+- Microsoft Edge (versão estável mais recente)
+
+**Sistema Operacional utilizado:**
+
+-  Windows 11
+
 ## 📊 Documentação de Testes
 
 A planilha pode ser acessada no link abaixo:
