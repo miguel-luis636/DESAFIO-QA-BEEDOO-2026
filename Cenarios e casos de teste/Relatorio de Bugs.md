@@ -1,4 +1,4 @@
-# 5️⃣ Registro de Bugs 
+# Registro de Bugs 
 
 # 🔹 Informações Gerais
 
