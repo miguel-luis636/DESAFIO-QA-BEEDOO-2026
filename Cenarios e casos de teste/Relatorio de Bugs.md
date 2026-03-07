@@ -21,6 +21,29 @@
 | Ferramentas utilizadas | DevTools, Console do navegador                                                             |
 
 
+#Observação baseada nos princípios de teste (CTFL)
+
+De acordo com os princípios de teste definidos no **ISTQB Certified Tester Foundation Level (CTFL)**, é importante destacar 3 conceitos relevantes para a análise dos resultados obtidos:
+
+**1. Testes mostram a presença de defeitos, não a sua ausência**
+
+Durante a execução dos testes foram identificados diversos bugs no sistema. Entretanto, isso não significa que todos os defeitos existentes foram encontrados. Os testes apenas evidenciam problemas que foram detectados nos cenários executados.
+
+**2. Teste exaustivo é impossível**
+
+Não é possível testar todas as combinações de entradas, estados e fluxos de um sistema. Por isso, mesmo após a execução dos testes documentados neste relatório, ainda podem existir defeitos não identificados.
+
+**3. Falácia da ausência de erros**
+
+Mesmo que todos os bugs encontrados sejam corrigidos, isso não garante automaticamente que o sistema esteja completamente livre de problemas ou que atenda perfeitamente às necessidades do usuário. A qualidade também depende da adequação do sistema aos requisitos e às regras de negócio.
+
+Além disso, durante a análise foram identificados potenciais riscos relacionados a **duplicação de dados**, inconsistência de informações e registros inválidos. Em alguns casos, esses problemas estão diretamente relacionados à ausência de validações no formulário de cadastro.
+
+Por exemplo, a implementação correta de validações de campos obrigatórios, validação de datas e validação numérica no campo **número de vagas** tende a corrigir múltiplos problemas simultaneamente. Ao impedir o envio de dados inválidos, o sistema também reduz a possibilidade de **registros duplicados ou inconsistentes**, melhorando a integridade da base de dados.
+
+Dessa forma, a correção de determinadas validações pode resolver não apenas um bug isolado, mas também **evitar efeitos colaterais como duplicação de dados, inconsistência de registros e falhas em relatórios ou cálculos futuros**.
+
+
 ---
 
 # 🐞 Bug 1 — Cadastro de curso aceita campos vazios
@@ -45,7 +68,7 @@ O sistema deve impedir o cadastro e exibir mensagens informando que os campos ob
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+*[Bug 1 — Cadastro de curso aceita campos vazios](https://drive.google.com/file/d/11Y3J8Y5-rwSY-9G8-nP4yBJSscOaIlkg/view?usp=sharing)*
 
 ### Possíveis melhorias no sistema
 
@@ -79,7 +102,7 @@ O sistema deve impedir o cadastro e exibir mensagem informando que o número de 
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 2 — Número de vagas aceita valores negativos)*](https://drive.google.com/file/d/1j3HkniPSOZlZkRNEXupuEsGc9wlVA0NV/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -113,7 +136,7 @@ O sistema deve validar a ordem das datas e impedir o cadastro.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 3 — Datas inconsistentes são aceitas)*](https://drive.google.com/file/d/1j3HkniPSOZlZkRNEXupuEsGc9wlVA0NV/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -146,7 +169,7 @@ O sistema deve validar se a URL corresponde a uma imagem válida.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 4 — URL da imagem aceita qualquer tipo de link*](https://drive.google.com/file/d/1j3HkniPSOZlZkRNEXupuEsGc9wlVA0NV/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -178,7 +201,7 @@ O sistema deve possuir uma página dedicada com informações completas do curso
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+*(Ao clicar no card de um curso para tentar acessar os seus detalhes)*
 
 ### Possíveis melhorias no sistema
 
@@ -189,7 +212,7 @@ O sistema deve possuir uma página dedicada com informações completas do curso
 
 ---
 
-# 🐞 Bug 6 — Header não redireciona para a home
+# 🐞 Melhoria 6 — Header não redireciona para a home
 
 ### Severidade
 
@@ -210,7 +233,7 @@ O usuário deve ser redirecionado para a página inicial.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Melhoria 6 — Header não redireciona para a home)*](https://drive.google.com/file/d/1VjFBXsbKW35CvMIh-r-gIPVTUJI2PM2R/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -242,7 +265,7 @@ O sistema deve excluir o curso selecionado com sucesso.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 7 — Exclusão de cursos não funciona)*](https://drive.google.com/file/d/1Qfsjh2RjoNQW21cWCrMCYfmOLkeHAzXG/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -275,7 +298,7 @@ A mensagem de sucesso deve ser exibida apenas quando a exclusão realmente ocorr
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 8 — Sistema mostra mensagem falsa de exclusão)*](https://drive.google.com/file/d/1Qfsjh2RjoNQW21cWCrMCYfmOLkeHAzXG/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -307,7 +330,7 @@ O sistema deve informar claramente os erros encontrados no formulário.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 9 — Falta de mensagens de erro no formulário)*](https://drive.google.com/file/d/1Kka1OX995y8KyjqWhOjvx2g2bwh0U1e9/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -339,7 +362,7 @@ Os campos devem possuir limite de caracteres.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 10 — Campos sem limite de caracteres)*](https://drive.google.com/file/d/10KHS9SJpTpaLDRQm632V8TrNEHRObCl8/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -370,7 +393,7 @@ O campo deve possuir limite visual e manter o layout estável.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 11 — Textarea pode quebrar o layout)*](https://drive.google.com/file/d/1_IIYYia2Y0G86JdC8jtrFYKC0apOqere/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -401,7 +424,10 @@ Os cards devem manter proporção e alinhamento padronizados.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 12 — Grid da listagem desproporcional)*](https://drive.google.com/file/d/1s0Is4r00vzbJzK76DKr6j-A8mgjFc51J/view?usp=sharing)
+[*(Evicencia 2)*](https://drive.google.com/file/d/155uLLl_4fGQrP8NIscoF8dniAdTw4zzZ/view?usp=sharing)
+[*(Bug 12 — Grid da listagem desproporcional)*](https://drive.google.com/file/d/1s0Is4r00vzbJzK76DKr6j-A8mgjFc51J/view?usp=sharing)
+[*(Bug 12 — Grid da listagem desproporcional)*](https://drive.google.com/file/d/1s0Is4r00vzbJzK76DKr6j-A8mgjFc51J/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
@@ -432,7 +458,7 @@ O sistema deve exibir mensagem informando que não há cursos cadastrados.
 
 ### Evidências
 
-*(Inserir aqui prints de tela, logs ou gravação demonstrando o erro)*
+[*(Bug 13 — Tela vazia quando não há cursos)*](https://drive.google.com/file/d/1sR_2LwqIzQ_TDlTNnhZ-fhfwIvqSAyYw/view?usp=sharing)
 
 ### Possíveis melhorias no sistema
 
