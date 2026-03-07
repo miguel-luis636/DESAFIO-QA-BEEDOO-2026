@@ -37,6 +37,100 @@ Os testes exploratórios consideraram principalmente os seguintes fluxos:
 
 ---
 
+# 🔹 Resultados da Execução dos Testes
+
+Durante a execução dos testes manuais foram avaliados **18 cenários de teste** relacionados aos fluxos principais do sistema.
+
+Os cenários cobriram principalmente:
+
+* Cadastro de cursos
+* Listagem de cursos
+* Exclusão de cursos
+* Validações de formulário
+* Cenários negativos
+* Comportamentos inesperados
+
+---
+
+# 📊 Resumo da Execução
+
+| Métrica                   | Quantidade | Percentual |
+| ------------------------- | ---------- | ---------- |
+| **Total de Cenários**     | 18         | 100%       |
+| **Cenários OK**           | 5          | 27,78%     |
+| **Cenários NOK**          | 13         | 72,22%     |
+| **Cenários não testados** | 0          | 0%         |
+
+---
+
+# 📈 Interpretação dos Resultados
+
+Os resultados indicam que **a maioria dos cenários apresentou falhas durante a execução dos testes**.
+
+Dos **18 cenários executados**:
+
+* **5 cenários passaram com sucesso**
+* **13 cenários apresentaram falhas**
+
+Isso representa aproximadamente **72,22% de cenários com problemas**, indicando que o sistema ainda possui **diversas inconsistências funcionais e técnicas**.
+
+---
+
+# 📉 Distribuição dos Resultados
+
+A análise gráfica dos testes demonstra claramente a diferença entre cenários aprovados e reprovados.
+
+* 🟢 **Cenários OK:** 27,8%
+* 🔴 **Cenários NOK:** 72,2%
+
+A maior concentração de falhas está relacionada principalmente a:
+
+* **validação de dados do formulario**
+* **integração com API**
+* **comportamento incorreto do sistema em cenários negativos**
+
+---
+
+# 🔎 Análise dos Resultados
+
+Os cenários que falharam estão diretamente relacionados aos seguintes tipos de problemas:
+
+### Validação de dados
+
+Foram identificadas falhas como:
+
+* campos obrigatórios aceitando valores vazios
+* número de vagas aceitando valores negativos
+* datas incoerentes sendo aceitas
+
+Esses problemas indicam ausência de validações adequadas no sistema.
+
+---
+
+### Feedback inadequado ao usuário
+
+O sistema também apresenta problemas de feedback, por exemplo:
+
+* mensagens de sucesso exibidas mesmo quando a operação falha
+* ausência de mensagens de erro no formulário
+
+Esse tipo de problema prejudica a **experiência do usuário e a confiabilidade do sistema**.
+
+---
+
+# 📊 Conclusão da Execução dos Testes
+
+Os resultados obtidos indicam que o sistema **ainda não está estável para uso em produção**, pois apresenta uma taxa elevada de falhas nos cenários avaliados.
+
+As principais áreas que necessitam de correção são:
+
+* validação de dados no formulário
+* integração com a API
+* tratamento de erros e mensagens ao usuário
+
+A correção desses pontos deve ser priorizada para garantir **maior confiabilidade, integridade dos dados e melhor experiência para o usuário**.
+
+
 # 🔹 Observações por Sistema
 
 ---
@@ -181,8 +275,7 @@ Adicionar redirecionamento para a homepage.
 
 ---
 
-# 7. Exclusão de cursos não funciona
-
+### 7. Exclusão de cursos não funciona
 
 ### Descrição
 
@@ -195,6 +288,19 @@ DELETE /test-api/courses/1
 HTTP 405
 ```
 
+### Explicação do erro
+
+O erro **HTTP 405 – Method Not Allowed** significa que o servidor recebeu a requisição, porém **o método HTTP utilizado não é permitido para o recurso solicitado**.
+
+Nesse caso, o sistema está enviando uma requisição **DELETE**, porém o servidor não permite esse método para esse endpoint.
+
+Isso pode ocorrer por diversos motivos, como:
+
+* endpoint da API não implementado para o método DELETE
+* configuração incorreta do servidor
+* erro na rota da API
+* restrições de métodos HTTP no backend
+* regras incorretas de configuração do servidor (como `.htaccess` ou configuração da API)
 
 ### Impacto
 
@@ -203,7 +309,7 @@ HTTP 405
 
 ### Recomendação
 
-Corrigir endpoint da API.
+Verificar a implementação do endpoint responsável pela exclusão de cursos na API e garantir que o método **DELETE** esteja corretamente configurado e permitido para essa rota.
 
 ---
 
