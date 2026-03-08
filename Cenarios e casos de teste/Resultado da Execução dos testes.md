@@ -102,6 +102,8 @@ Foram identificadas falhas como:
 * campos obrigatórios aceitando valores vazios
 * número de vagas aceitando valores negativos
 * datas incoerentes sendo aceitas
+* Possível vulnerabilidade de Cross-Site Scripting
+  
 
 Esses problemas indicam ausência de validações adequadas no sistema.
 
